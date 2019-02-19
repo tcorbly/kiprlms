@@ -1,0 +1,32 @@
+.kiprlms-display{
+	z-index: 1001;
+	position: fixed;
+	width: 100%;
+	background: #EE0000;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: tahoma;
+	font-weight: bold;
+}
+
+.kiprlms-display.display_top{
+	top:0;
+}
+
+.kiprlms-display.display_bottom{
+	bottom: 0;
+}
+
+.kiprlms-text{
+	padding: 10px;
+}
+
+.admin-bar .kiprlms-display.display_top{
+	top: 46px;
+}
+
+@media screen and (min-width: 783px){
+	.admin-bar .kiprlms-display.display_top{
+		top: 32px;
+	}
+}
