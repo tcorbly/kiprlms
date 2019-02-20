@@ -10,6 +10,9 @@ Text Domain: kiprlms
 License GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
+//Includes
+include( plugin_dir_url(__FILE__) . 'D:/xampp/htdocs/test-site/wordpress/wp-content\plugins\kiprlms\'
+
 // Create a link to the settings page unde Wordpress Settings in the dashboard
 add_action( 'admin_menu', 'kipr_lms_general_settings_page' );
 function kipr_lms_general_settings_page(){
