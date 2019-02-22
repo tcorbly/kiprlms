@@ -11,10 +11,10 @@ License GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.
 */
 
 //Includes
-include( plugin_dir_url(__FILE__) . 'D:/xampp/htdocs/test-site/wordpress/wp-content\plugins\kiprlms\'
+//include( plugin_dir_url(__FILE__) . '\kiprlms\kipr-lms.php');
 
 // Create a link to the settings page unde Wordpress Settings in the dashboard
-add_action( 'admin_menu', 'kipr_lms_general_settings_page' );
+add_action( 'admin menu', 'kipr_lms_general_settings_page' );
 function kipr_lms_general_settings_page(){
 	add_submenu_page(
 	'options-general.php',
@@ -166,9 +166,41 @@ function kiprweb_body_class( $classes ){
 
 
 
+//*******************************************************************************************************************************************
+//Table Test
+//*******************************************************************************************************************************************
+$csv = array();
+$lines = file('C:\\xampp\htdocs\wordpress\wp-content\plugins\kiprlms\Qatar.csv', FILE_IGNORE_NEW_LINES);
 
+foreach ($lines as $key => $value)
+{
+    $csv[$key] = str_getcsv($value);
+}
 
+// echo '<pre>';
+// print_r($csv);
+// echo '</pre>';
 
+function vertical_table($array){
+	$html = '<table class="table table-condensed table-bordered neutralize">';   
+	$html .='<tbody>';
+	$html .='<tr>';
+	$html .='<td><b>Question</td>';
+	$html .='<td><b>Points</td>';
+	$html .='</tr>';
+	$rows = count($array[0]);
+	for ($x = 4; $x < $rows; $x++){
+		$html .='<tr>';
+		$html .='<td>'.$array[0][$x].'</td>';
+		$html .='<td>'.$array[1][$x].'</td>';
+		$html .='</tr>';
+	}
 
+	$html .='</tbody>';
+	$html .='</table>';
+	return $html;
+}
+
+echo vertical_table($csv);
 
 ?>

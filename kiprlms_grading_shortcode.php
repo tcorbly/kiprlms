@@ -8,6 +8,7 @@ function kiprlms_grades_csv_sc( $atts ) {
 }
 
 
+
 function kiprlms_display_grades_csv(){
 	/*Get the user*/
 	$user_data = get_userdata(get_current_user_id());
@@ -92,4 +93,41 @@ function kiprlms_display_grades_csv(){
 		}
 	}
 }
+
+//Method to read in the CSV and process it out as an array.
+//Prithviraj Kadiyala
+$csv = array();
+$lines = file('C:\\xampp\htdocs\wordpress\wp-content\plugins\kiprlms\Qatar.csv', FILE_IGNORE_NEW_LINES);
+
+foreach ($lines as $key => $value)
+{
+    $csv[$key] = str_getcsv($value);
+}
+
+// echo '<pre>';
+// print_r($csv);
+// echo '</pre>';
+
+function vertical_table($array){
+	$html = '<table class="table table-condensed table-bordered neutralize">';   
+	$html .='<tbody>';
+	$html .='<tr>';
+	$html .='<td><b>Question</td>';
+	$html .='<td><b>Points</td>';
+	$html .='</tr>';
+	$rows = count($array[0]);
+	echo $rows;
+	for ($x = 4; $x <= $rows; $x++){
+		$html .='<tr>';
+		$html .='<td>'.$array[0][$x].'</td>';
+		$html .='<td>'.$array[1][$x].'</td>';
+		$html .='</tr>';
+	}
+
+	$html .='</tbody>';
+	$html .='</table>';
+	return $html;
+}
+
+echo vertical_table($csv);
 ?>
