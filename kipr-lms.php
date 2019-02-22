@@ -170,7 +170,7 @@ function kiprweb_body_class( $classes ){
 //Table Test
 //*******************************************************************************************************************************************
 $csv = array();
-$lines = file('C:\\xampp\htdocs\wordpress\wp-content\plugins\kiprlms\Qatar.csv', FILE_IGNORE_NEW_LINES);
+$lines = file('D:\xampp\htdocs\test-site\wordpress\wp-content\plugins\kiprlms\Qatar.csv', FILE_IGNORE_NEW_LINES);
 
 foreach ($lines as $key => $value)
 {

@@ -9,13 +9,13 @@ function kiprlms_grades_csv_sc( $atts ) {
 
 
 
-function kiprlms_display_grades_csv(){
-	/*Get the user*/
+/*function kiprlms_display_grades_csv(){
+	//Get the user
 	$user_data = get_userdata(get_current_user_id());
 
 	if($user_data->has_prop('nickname')){
 
-		/*Open file and get data, then close*/
+		//Open file and get data, then close
 		$url = "https://www.kipr.org/wp-content/uploads/2019 Botball/Documentation/Qatar/qatar-p1-grading-all-subs-2019-02-06.txt";
 		$lines = file("https://www.kipr.org/wp-content/uploads/2019 Botball/Documentation/Qatar/qatar-p1-grading-all-subs-2019-02-06.txt");
 		$data = array();
@@ -26,14 +26,14 @@ function kiprlms_display_grades_csv(){
 		}
 		else{echo "File not found";}
 		//if(file_exists("https://www.kipr.org/wp-content/uploads/2019 Botball/Documentation/Qatar/qatar-p1-grading-all-subs-2019-02-06.csv")){
-			/*if($file !== FALSE){
-				while(($line = fgetcsv($file, 100000, ",")) !== FALSE){
-					$data[] = $line;	
-				}
-				echo "Found a file <br>";
-			}
-			else{echo "File not found";}
-			fclose($file);*/
+			//if($file !== FALSE){
+				//while(($line = fgetcsv($file, 100000, ",")) !== FALSE){
+					//$data[] = $line;	
+				//}
+				//echo "Found a file <br>";
+			//}
+			//else{echo "File not found";}
+			//fclose($file);
 		//}
 		//else{echo "File not existable";}
 
@@ -92,7 +92,7 @@ function kiprlms_display_grades_csv(){
 			}
 		}
 	}
-}
+}*/
 
 //Method to read in the CSV and process it out as an array.
 //Prithviraj Kadiyala
